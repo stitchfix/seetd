@@ -30,8 +30,10 @@ def get_default_params():
 
     fully_connected = True
 
+    team_weights_in = None
+
     return save_dir, save_name, fname, fdir, auto_calc_weights, cost_weights_in, n_starts, number_of_iterations, \
-           starting_iteration, s_amp, s_width, s_cent, fully_connected
+           starting_iteration, s_amp, s_width, s_cent, fully_connected, team_weights_in
 
 def parse_args(parser):
 
@@ -49,48 +51,65 @@ def parse_args(parser):
 
     parser.add_argument('--fully_connected', help="should everyone be considered a neighbour for local opt?", default='True')
 
+    parser.add_argument('--team_weights', help="weights for each of the sub-teams (sorted)", default=team_weights_in, nargs='+')
+
+
     return parser.parse_args()
 
+def get_team_weights(team_weights_in, teams):
+    if team_weights_in is None:
+        team_weights_in = [1.]*len(teams)
+    else:
+        if len(team_weights_in) != len(teams):
+            raise ValueError("Incorrect number of team weights.")
+
+    return {team:float(weight) for team,weight in zip(teams,team_weights_in)}
 
 if __name__ == "__main__":
 
     # pre-define params for defaults - easier to debug with an IDE
     save_dir, save_name, fname, fdir, auto_calc_weights, cost_weights_in, n_starts, number_of_iterations, \
-    starting_iteration, s_amp, s_width, s_cent, fully_connected = get_default_params()
+    starting_iteration, s_amp, s_width, s_cent, fully_connected, team_weights_in = get_default_params()
 
     # parsed args
     parser = argparse.ArgumentParser()
     args = parse_args(parser)
 
+
     # remap to params
     save_dir = args.save_dir
     save_name = args.save_name
-
     fname = args.file_name
     fdir = args.file_dir
 
-    number_of_iterations = args.iterations
-
     # algo params
+    number_of_iterations = args.iterations
     auto_calc_weights = args.auto_calc_weights == 'True'
-
     fully_connected = args.fully_connected == 'True'
-
     cost_weights_in = map(float, args.cost_weights)
+    team_weights_in = args.team_weights
+
 
     # summary of inputs
-    LOGGER.info("{}{}".format(fdir, fname))
-    LOGGER.info("{}{}".format(save_dir, save_name))
-    LOGGER.info("{}".format(auto_calc_weights))
-    LOGGER.info("{}".format(cost_weights_in))
-    LOGGER.info("{}".format(number_of_iterations))
-    LOGGER.info("{}".format(fully_connected))
+    LOGGER.info("Filename: {}{}".format(fdir, fname))
+    LOGGER.info("Save name: {}{}".format(save_dir, save_name))
+    LOGGER.info("Auto calc weights: {}".format(auto_calc_weights))
+    LOGGER.info("Cost function weights: {}".format(cost_weights_in))
+    LOGGER.info("Iterations: {}".format(number_of_iterations))
+    LOGGER.info("Fully connected: {}".format(fully_connected))
 
 
     # start from here
     X = Data(fname, fdir)
     X.pre_process()
-    X.update_team_weights({ind: 1 if ind != 1 else -1 for ind in X.team_names})
+
+    team_weights = get_team_weights(team_weights_in, sorted(X.team_names))
+
+    LOGGER.info("Team weights: {}".format(team_weights))
+
+    X.update_team_weights(team_weights)
+
+
 
     # init some things
     n_changes = 0
@@ -115,8 +134,6 @@ if __name__ == "__main__":
     best_costs = [best_cost]
     current_costs = [old_cost]
 
-    # debug
-    LOGGER.info("Team names: {}".format(X.team_names))
 
     LOGGER.info("Initial cost [{}]".format(old_cost))
 
