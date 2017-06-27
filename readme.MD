@@ -17,7 +17,7 @@ The seating layout is defined in the tab `seat_map`.  Seats to be included shoul
 empty seats are left blank.  1 cell counts as 1 unit of distance.  To increase distance, simply add more empty cells between
 seats.
 
-The name/team membership of the people is included in the `names` tab.  There are three columns self-explanatory columns:
+The name/team membership of the people is included in the `names` tab.  There are three self-explanatory columns:
 
 `names`: A unique name for each person.
 
@@ -42,7 +42,7 @@ numbers should map to the numbers in `seat_map`.
 
 `--fully_connected True` A bool specifying if each seat is a neighbour of every other seat.  If set to `False` then seats within the immediate vicinity are considered neighbours.  This neghbourhood is used in propsing changes for the local optimization component.
 
-'--team_weights a b c d' Where `a`,`b`,`c`,`d` are floats specifying the weights for sub-teams in the same-team term.  The matching is done by sorting the team names.  -ve values will cause agglomeration while +ve values will repel.
+`--team_weights a b c d` Where `a`,`b`,`c`,`d` are floats specifying the weights for sub-teams in the same-team term.  The matching is done by sorting the team names.  -ve values will cause agglomeration while +ve values will repel.
 
 ### Examples
 `$python solve.py --auto_calc_weights True --iterations 230 --fully_connected False`
