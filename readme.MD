@@ -1,12 +1,16 @@
 # Be Smarter. Be seetd
 
-<img src="names.gif" alt="Drawing" align="center" style="width: 512px;"/>
+<img src="title.png" alt="Drawing" align="center" style="width: 512px;"/>
 
-Code accompanying the [blog post]http://multithreaded.stitchfix.com/blog/2017/06/29/please-remain-seetd/).
+Seetd will help you sit smarter. 
 
+If you like to sit, seetd does too.
 
+Code accompanying the [blog post](http://multithreaded.stitchfix.com/blog/2017/06/29/please-remain-seetd/).
 
 ## Usage
+
+<img src="names.gif" alt="Drawing" align="center" style="width: 512px;"/>
 
 ### Quick start
 run `$python solve.py` to run the example.
