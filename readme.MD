@@ -2,15 +2,19 @@
 
 <img src="title.png" alt="Drawing" align="center" style="width: 512px;"/>
 
-Seetd will help you sit smarter. 
+seetd sits you smarter. 
 
-If you like to sit, seetd does too.
+You like to sit. seetd does too.
 
-Code accompanying the [blog post](http://multithreaded.stitchfix.com/blog/2017/06/29/please-remain-seetd/).
+Need to figure out your Thanksgiving seeting arrangement? seetd.
+
+Determining your office seeting plan? seetd.
 
 ## Usage
 
-<img src="names.gif" alt="Drawing" align="center" style="width: 512px;"/>
+Code accompanying the [blog post](http://multithreaded.stitchfix.com/blog/2017/06/29/please-remain-seetd/).
+
+<img src="names.gif" alt="Drawing" align="center" width="100%" />
 
 ### Quick start
 run `$python solve.py` to run the example.
