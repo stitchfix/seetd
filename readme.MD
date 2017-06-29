@@ -1,6 +1,10 @@
-# seetd
+# Be Smarter. Be seetd
 
-Code accompanying the [blog post](http://multithreaded.stitchfix.com/blog/).
+<img src="names.gif" alt="Drawing" align="center" style="width: 512px;"/>
+
+Code accompanying the [blog post]http://multithreaded.stitchfix.com/blog/2017/06/29/please-remain-seetd/).
+
+
 
 ## Usage
 
