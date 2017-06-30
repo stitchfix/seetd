@@ -18,6 +18,10 @@ Oh what's up with this office? Needs more <strike>cowbell</strike>seetd.
 
 Just use seetd. Be Smarter. Be seetd.
 
+Disrupting the sitting economy. Be seetd.
+
+Machine learning. Synergy. Your butt. Seetd.
+
 ## Usage
 
 Code accompanying the [blog post](http://multithreaded.stitchfix.com/blog/2017/06/29/please-remain-seetd/).
