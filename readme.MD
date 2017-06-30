@@ -16,11 +16,11 @@ Want that office window seet and want to run the seeting assignment for your com
 
 Oh what's up with this office? Needs more <strike>cowbell</strike>seetd.
 
+What's disrupting the sitting economy? seetd.
+
+Machine learning. Synergy. Your butt. seetd.
+
 Just use seetd. Be Smarter. Be seetd.
-
-Disrupting the sitting economy. Be seetd.
-
-Machine learning. Synergy. Your butt. Seetd.
 
 ## Usage
 
