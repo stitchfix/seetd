@@ -10,6 +10,14 @@ Need to figure out your Thanksgiving seeting arrangement? seetd.
 
 Determining your office seeting plan? seetd.
 
+Want an uber for seets? Not seetd.
+
+Want that office window seet and want to run the seeting assignment for your company? seetd.
+
+Oh what's up with this office? Needs more <strike>cowbell</strike>seetd.
+
+Just use seetd. Be Smarter. Be seetd.
+
 ## Usage
 
 Code accompanying the [blog post](http://multithreaded.stitchfix.com/blog/2017/06/29/please-remain-seetd/).
